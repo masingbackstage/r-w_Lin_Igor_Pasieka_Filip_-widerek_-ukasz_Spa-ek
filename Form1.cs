@@ -23,8 +23,6 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
         cykl - zmienna urojona do przesuwania liczb w macierzy
          */
         public int size = 1 ,x;
-        public Complex cykl;
-
         void Print_dGV(Complex[,] A, Complex[] B)
         {
             //dGV1 wyswietlenie macierzy
@@ -64,7 +62,20 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             }
         }
 
-
+        void AxB(Complex[,] A)
+        {
+            Complex[] wynik = new Complex[size];
+            for (int k = 0; k < size; k++)
+            {
+                x++;
+                for (int w = 0; w < size; w++)
+                {
+                    wynik[k] += A[k, w] * x;
+                }
+            }
+            x = 0;
+            Print_dGV(A, wynik);
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -77,20 +88,7 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
                     Gauss[w, k] = new Complex(w + 1, k + 1);
                 }
             }
-
-            //Macierz A*x=B
-            Complex[] wynik = new Complex[size];
-            for (int k = 0; k < size; k++)
-            {
-                x++;
-                for (int w = 0; w < size; w++)
-                {
-                    wynik[k] += Gauss[k,w] * x;
-                }
-            }
-            x = 0;
-
-            Print_dGV(Gauss, wynik);
+            AxB(Gauss);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -101,26 +99,37 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             {
                 for (int w = 0; w < size; w++)
                 {
-                    Hilbert[k, w] = 1 / (k + w - 1);
+                    Hilbert[k, w] = Math.Round((double)1 / (k + w + 1),5);
                 }
             }
-
-           
+            AxB(Hilbert);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //Macierz cykliczna
+            Complex cykl;
+            // Macierz cykliczna
             Complex[,] cykliczna = new Complex[size, size];
             for (int k = 0; k < size; k++)
             {
-                for (int w = size; w >= size; w--)
+                for (int w = 0; w < size; w++)
                 {
-                    cykl = cykliczna[k, w];
-                    cykliczna[k, w] = cykliczna[k, w - 1];
-                    cykliczna[k, w - 1] = cykl;
+                    cykliczna[w, k] = new Complex(w + 1, k + 1);
                 }
             }
+            for (int i = size - 1; i >= 0; i--)
+            {
+                for (int k = size - 1; k >= size - i; k--)
+                {
+                    for (int w = size - 1; w >= 1; w--)
+                    {
+                        cykl = cykliczna[k, w];
+                        cykliczna[k, w] = cykliczna[k, w - 1];
+                        cykliczna[k, w - 1] = cykl;
+                    }
+                }
+            }
+            AxB(cykliczna);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -131,10 +140,11 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             {
                 for (int w = 0; w < size; w++)
                 {
+                    Vandermonde[k, w] = new Complex(w + 1, k + 1);
                     Vandermonde[k, w] = Math.Pow((k + 1), w);
                 }
             }
-
+            AxB(Vandermonde);
         }
 
         //Zmiana rozmiaru macierzy
@@ -142,7 +152,5 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
         {
             size = (int)numericUpDown1.Value;
         }
-
-
     }
 }
