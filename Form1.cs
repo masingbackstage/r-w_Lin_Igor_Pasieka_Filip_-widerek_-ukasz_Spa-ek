@@ -13,99 +13,65 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
 {
     public partial class Form1 : Form
     {
-
         public Form1()
         {
             InitializeComponent();
         }
 
-        int N = 1 ,x = 1;
-
+        int size = 1 ,x;
+        public Complex suma;
         private void button1_Click(object sender, EventArgs e)
         {
-            Complex[,] F1 = new Complex[N, N];
-            for (int k = 0; k < N; k++)
+            Complex[,] Wektor = new Complex[size, size];
+            for (int k = 0; k < size; k++)
             {
-                for (int i = 0; i < N; i++)
+                for (int w = 0; w < size; w++)
                 {
-                    F1[i, k] = new Complex(i - 1, k + 1);
+                   Wektor[w, k] = new Complex(w + 1, k + 1);
                 }
             }
 
-            Complex[,] W1;
-            W1 = F1;
-
-            dGV1.RowCount = N;
-            dGV1.ColumnCount = N;
+            dGV1.RowCount = size;
+            dGV1.ColumnCount = size;
             dGV1.RowHeadersWidth = 80;
-            for (int k = 0; k < N; k++)
+            for (int k = 0; k < size; k++)
             {
                 dGV1.Columns[k].HeaderCell.Value = " k = " + k.ToString();
-                for (int i = 0; i < N; i++)
+                for (int w = 0; w < size; w++)
                 {
-                    dGV1.Rows[i].HeaderCell.Value = " w = " + i.ToString();
-                    dGV1.Rows[i].Cells[k].Value = W1[i, k].ToString();
+                    dGV1.Rows[w].HeaderCell.Value = " w = " + w.ToString();
+                    dGV1.Rows[w].Cells[k].Value = Wektor[w, k].ToString();
                 }
-
             }
 
-            Complex[] F0 = new Complex[N];
-            for (int k = 0; k < N; k++)
+            Complex[] F0 = new Complex[size];
+            Complex[] wynik = new Complex[size];
+            for (int k = 0; k < size; k++)
             {
-                for (int i = 0; i < N; i++)
-                {
-                    F0[k] = F1[k,i]*x;
-                }
                 x++;
+                for (int w = 0; w < size; w++)
+                {
+                    F0[k] = Wektor[k,w] * x;
+                    suma += F0[k];
+                }
+                wynik[k] = suma;
+                suma = 0;
             }
             x = 0;
-            Complex[] W2;
-            W2 = F0;
 
             dGV2.RowCount = 1;
-            dGV2.ColumnCount = N;
+            dGV2.ColumnCount = size;
             dGV2.RowHeadersWidth = 80;
-            for (int k = 0; k < N; k++)
+            for (int k = 0; k < size; k++)
             {
                 dGV2.Rows[0].HeaderCell.Value = " w = 0";
                 dGV2.Columns[k].HeaderCell.Value = " k = " + k.ToString();
-                dGV2.Rows[0].Cells[k].Value = W2[k].ToString();
+                dGV2.Rows[0].Cells[k].Value = wynik[k].ToString();
             }
         }
-
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            N = (int)numericUpDown1.Value;
+            size = (int)numericUpDown1.Value;
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            /*Complex[,] F1 = new Complex[N,N];
-            for (int k = 0; k < N; k++)
-            {
-                for (int i = 0; i < N; i++)
-                {
-                    F1[i,k] = new Complex(i - 1, k + 1);
-                }
-            }
-                
-            Complex[,] F;
-            F = F1;
-
-            dGV1.RowCount = N;
-            dGV1.ColumnCount = N;
-            dGV1.RowHeadersWidth = 80;
-            for (int k = 0; k < N; k++)
-            {
-                dGV1.Columns[k].HeaderCell.Value = " k = " + k.ToString();
-                for (int i = 0; i < N; i++)
-                {
-                    dGV1.Rows[i].HeaderCell.Value = " w = " + i.ToString();
-                    dGV1.Rows[i].Cells[k].Value = F[i,k].ToString();
-                }
-                
-            }*/
-        }
-
     }
 }
