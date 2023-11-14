@@ -34,16 +34,23 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             this.dGV2 = new System.Windows.Forms.DataGridView();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.dGV3 = new System.Windows.Forms.DataGridView();
+            this.Gauss = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.dGV1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV3)).BeginInit();
+            this.Gauss.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(1336, 12);
+            this.button1.Location = new System.Drawing.Point(1313, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -56,10 +63,10 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             this.dGV1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV1.GridColor = System.Drawing.SystemColors.ControlText;
-            this.dGV1.Location = new System.Drawing.Point(12, 12);
+            this.dGV1.Location = new System.Drawing.Point(6, 7);
             this.dGV1.Name = "dGV1";
             this.dGV1.RowHeadersWidth = 51;
-            this.dGV1.Size = new System.Drawing.Size(1318, 200);
+            this.dGV1.Size = new System.Drawing.Size(1301, 351);
             this.dGV1.TabIndex = 1;
             // 
             // dGV2
@@ -67,15 +74,15 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             this.dGV2.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV2.GridColor = System.Drawing.Color.SlateGray;
-            this.dGV2.Location = new System.Drawing.Point(12, 401);
+            this.dGV2.Location = new System.Drawing.Point(6, 465);
             this.dGV2.Name = "dGV2";
             this.dGV2.RowHeadersWidth = 51;
-            this.dGV2.Size = new System.Drawing.Size(1318, 203);
+            this.dGV2.Size = new System.Drawing.Size(1301, 95);
             this.dGV2.TabIndex = 3;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(1336, 41);
+            this.numericUpDown1.Location = new System.Drawing.Point(1313, 36);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             1,
             0,
@@ -94,27 +101,80 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             // dGV3
             // 
             this.dGV3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV3.Location = new System.Drawing.Point(12, 229);
+            this.dGV3.Location = new System.Drawing.Point(6, 364);
             this.dGV3.Name = "dGV3";
-            this.dGV3.Size = new System.Drawing.Size(1318, 150);
+            this.dGV3.Size = new System.Drawing.Size(1301, 95);
             this.dGV3.TabIndex = 5;
+            // 
+            // Gauss
+            // 
+            this.Gauss.Controls.Add(this.tabPage1);
+            this.Gauss.Controls.Add(this.tabPage2);
+            this.Gauss.Controls.Add(this.tabPage3);
+            this.Gauss.Controls.Add(this.tabPage4);
+            this.Gauss.Location = new System.Drawing.Point(12, 12);
+            this.Gauss.Name = "Gauss";
+            this.Gauss.SelectedIndex = 0;
+            this.Gauss.Size = new System.Drawing.Size(1399, 601);
+            this.Gauss.TabIndex = 6;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dGV1);
+            this.tabPage1.Controls.Add(this.numericUpDown1);
+            this.tabPage1.Controls.Add(this.dGV3);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.dGV2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1391, 575);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Gauss";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1391, 575);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Hilbert";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1391, 575);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Cylkiczna";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1391, 575);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Vandermond";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1423, 616);
-            this.Controls.Add(this.dGV3);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.dGV2);
-            this.Controls.Add(this.dGV1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Gauss);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dGV1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV3)).EndInit();
+            this.Gauss.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -126,6 +186,11 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
         private System.Windows.Forms.DataGridView dGV2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.DataGridView dGV3;
+        private System.Windows.Forms.TabControl Gauss;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
     }
 }
 

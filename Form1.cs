@@ -18,30 +18,33 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             InitializeComponent();
         }
 
-        int size = 1 ,x;
-        public Complex suma;
+        public int size = 1 ,x;
+        public Complex suma, cykl;
+
         private void button1_Click(object sender, EventArgs e)
         {
-            Complex[,] Wektor = new Complex[size, size];
+            //Macierz Gaussa
+            Complex[,] Gauss = new Complex[size, size];
             for (int k = 0; k < size; k++)
             {
                 for (int w = 0; w < size; w++)
                 {
-                   Wektor[w, k] = new Complex(w + 1, k + 1);
+                    Gauss[w, k] = new Complex(w + 1, k + 1);
                 }
             }
 
+            //Macierz A*x=B
             Complex[] wynik = new Complex[size];
             for (int k = 0; k < size; k++)
             {
                 x++;
                 for (int w = 0; w < size; w++)
                 {
-                    wynik[k] += Wektor[k,w] * x;
+                    wynik[k] += Gauss[k,w] * x;
                 }
             }
             x = 0;
-
+            
             Complex[,] Hilbert = new Complex[size, size];
             for(int k = 0; k < size; k++)
             {
@@ -50,6 +53,27 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
                     Hilbert[k, w] = 1 / (k + w - 1);
                 }
             }
+
+            Complex[,] cykliczna = new Complex[size, size];
+            for (int k = 0; k < size; k++)
+            {
+                for (int w = size; w >= size; w--)
+                {
+                    cykl = cykliczna[k, w];
+                    cykliczna[k, w] = cykliczna[k, w-1];
+                    cykliczna[k, w - 1] = cykl;
+                }
+            }
+
+            Complex[,] Vandermonde = new Complex[size, size];
+            for (int k = 0; k < size; k++)
+            {
+                for (int w = 0; w < size; w++)
+                {
+                    Vandermonde[k, w] = Math.Pow((k + 1),w);
+                }
+            }
+
             //dGV1 print
             dGV1.RowCount = size;
             dGV1.ColumnCount = size;
@@ -60,7 +84,7 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
                 for (int w = 0; w < size; w++)
                 {
                     dGV1.Rows[w].HeaderCell.Value = " w = " + w.ToString();
-                    dGV1.Rows[w].Cells[k].Value = Wektor[w, k].ToString();
+                    dGV1.Rows[w].Cells[k].Value = Gauss[w, k].ToString();
                 }
             }
 
@@ -90,6 +114,11 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             size = (int)numericUpDown1.Value;
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
