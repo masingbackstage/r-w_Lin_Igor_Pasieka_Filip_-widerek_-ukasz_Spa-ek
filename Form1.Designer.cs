@@ -66,6 +66,7 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             // 
             this.dGV2.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV2.GridColor = System.Drawing.Color.SlateGray;
             this.dGV2.Location = new System.Drawing.Point(12, 401);
             this.dGV2.Name = "dGV2";
             this.dGV2.RowHeadersWidth = 51;

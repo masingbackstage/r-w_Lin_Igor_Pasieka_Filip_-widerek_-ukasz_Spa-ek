@@ -30,6 +30,7 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
                    Wektor[w, k] = new Complex(w + 1, k + 1);
                 }
             }
+
             Complex[] wynik = new Complex[size];
             for (int k = 0; k < size; k++)
             {
@@ -38,10 +39,17 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
                 {
                     wynik[k] += Wektor[k,w] * x;
                 }
-                
             }
             x = 0;
 
+            Complex[,] Hilbert = new Complex[size, size];
+            for(int k = 0; k < size; k++)
+            {
+                for(int w = 0; w < size; w++)
+                {
+                    Hilbert[k, w] = 1 / (k + w - 1);
+                }
+            }
             //dGV1 print
             dGV1.RowCount = size;
             dGV1.ColumnCount = size;
