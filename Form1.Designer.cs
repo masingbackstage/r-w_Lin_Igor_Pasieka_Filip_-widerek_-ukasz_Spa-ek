@@ -41,9 +41,10 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             // button1
             // 
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(713, 12);
+            this.button1.Location = new System.Drawing.Point(951, 15);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 0;
             this.button1.Text = "wektor";
             this.button1.UseVisualStyleBackColor = true;
@@ -54,25 +55,35 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             this.dGV1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV1.GridColor = System.Drawing.SystemColors.ControlText;
-            this.dGV1.Location = new System.Drawing.Point(12, 12);
+            this.dGV1.Location = new System.Drawing.Point(16, 15);
+            this.dGV1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dGV1.Name = "dGV1";
-            this.dGV1.Size = new System.Drawing.Size(695, 200);
+            this.dGV1.RowHeadersWidth = 51;
+            this.dGV1.Size = new System.Drawing.Size(927, 246);
             this.dGV1.TabIndex = 1;
             // 
             // dGV2
             // 
             this.dGV2.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV2.Location = new System.Drawing.Point(12, 235);
+            this.dGV2.Location = new System.Drawing.Point(16, 289);
+            this.dGV2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dGV2.Name = "dGV2";
-            this.dGV2.Size = new System.Drawing.Size(695, 203);
+            this.dGV2.RowHeadersWidth = 51;
+            this.dGV2.Size = new System.Drawing.Size(927, 250);
             this.dGV2.TabIndex = 3;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(713, 101);
+            this.numericUpDown1.Location = new System.Drawing.Point(951, 124);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(75, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(100, 22);
             this.numericUpDown1.TabIndex = 4;
             this.numericUpDown1.Value = new decimal(new int[] {
             1,
@@ -83,13 +94,14 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.dGV2);
             this.Controls.Add(this.dGV1);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dGV1)).EndInit();
