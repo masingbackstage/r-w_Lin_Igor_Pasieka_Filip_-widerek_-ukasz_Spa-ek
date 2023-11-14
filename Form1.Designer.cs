@@ -46,13 +46,13 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             // button1
             // 
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(1336, 50);
+            this.button1.Location = new System.Drawing.Point(1319, 50);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(92, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Gauss";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Gauss);
             // 
             // dGV1
             // 
@@ -78,14 +78,14 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(1336, 15);
+            this.numericUpDown1.Location = new System.Drawing.Point(1319, 15);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(75, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(92, 20);
             this.numericUpDown1.TabIndex = 4;
             this.numericUpDown1.Value = new decimal(new int[] {
             1,
@@ -104,33 +104,33 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1336, 79);
+            this.button2.Location = new System.Drawing.Point(1319, 79);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(92, 23);
             this.button2.TabIndex = 6;
             this.button2.Text = "Hilbert";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Hilbert);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1336, 109);
+            this.button3.Location = new System.Drawing.Point(1319, 109);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(92, 23);
             this.button3.TabIndex = 7;
             this.button3.Text = "Cykliczna";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.Cykliczna);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1336, 139);
+            this.button4.Location = new System.Drawing.Point(1319, 139);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(92, 23);
             this.button4.TabIndex = 8;
-            this.button4.Text = "Vandermond";
+            this.button4.Text = "Vandermonde";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Vandermonde);
             // 
             // Form1
             // 

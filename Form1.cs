@@ -17,12 +17,14 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
         {
             InitializeComponent();
         }
-        /*
-        Size - rozmiar macierzy, wektora
-        x - zmienna ukryta
-        cykl - zmienna urojona do przesuwania liczb w macierzy
-         */
-        public int size = 1 ,x;
+
+        //Rozmiar macierzy, wektora
+        public int size = 1;
+
+        //Zmienna ukryta
+        public int x;
+
+        //Wyświetlenie macierzy w tabeli
         void Print_dGV(Complex[,] A, Complex[] B)
         {
             //dGV1 wyswietlenie macierzy
@@ -62,6 +64,7 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             }
         }
 
+        //Mnożenie macierzy z wektorem
         void AxB(Complex[,] A)
         {
             Complex[] wynik = new Complex[size];
@@ -77,9 +80,15 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             Print_dGV(A, wynik);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //Zmiana rozmiaru macierzy
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            //Macierz Gaussa
+            size = (int)numericUpDown1.Value;
+        }
+        
+        //Macierz Gaussa
+        private void Gauss(object sender, EventArgs e)
+        {
             Complex[,] Gauss = new Complex[size, size];
             for (int k = 0; k < size; k++)
             {
@@ -91,24 +100,26 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             AxB(Gauss);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        //Macierz Hilberta
+        private void Hilbert(object sender, EventArgs e)
         {
-            //Macierz Hilberta
             Complex[,] Hilbert = new Complex[size, size];
             for (int k = 0; k < size; k++)
             {
                 for (int w = 0; w < size; w++)
                 {
-                    Hilbert[k, w] = Math.Round((double)1 / (k + w + 1),5);
+                    Hilbert[k, w] = Math.Round((double)1 / (k + w + 1), 5);
                 }
             }
             AxB(Hilbert);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        // Macierz cykliczna
+        private void Cykliczna(object sender, EventArgs e)
         {
+            //zmienna urojona do przesuwania liczb w macierzy
             Complex cykl;
-            // Macierz cykliczna
+
             Complex[,] cykliczna = new Complex[size, size];
             for (int k = 0; k < size; k++)
             {
@@ -132,9 +143,9 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             AxB(cykliczna);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        //Macierz Vandermonda
+        private void Vandermonde(object sender, EventArgs e)
         {
-            //Macierz Vandermonda
             Complex[,] Vandermonde = new Complex[size, size];
             for (int k = 0; k < size; k++)
             {
@@ -147,10 +158,8 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             AxB(Vandermonde);
         }
 
-        //Zmiana rozmiaru macierzy
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            size = (int)numericUpDown1.Value;
-        }
+
     }
 }
+
+//komentarze, macierze i wektory obrócone o 90 stopni, wygląd
