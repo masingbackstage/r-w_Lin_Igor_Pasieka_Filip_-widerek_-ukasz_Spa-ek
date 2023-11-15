@@ -37,6 +37,9 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             this.button4 = new System.Windows.Forms.Button();
             this.dGV1 = new System.Windows.Forms.DataGridView();
             this.dGV3 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV1)).BeginInit();
@@ -75,9 +78,9 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             // dGV2
             // 
             this.dGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV2.Location = new System.Drawing.Point(867, 12);
+            this.dGV2.Location = new System.Drawing.Point(867, 50);
             this.dGV2.Name = "dGV2";
-            this.dGV2.Size = new System.Drawing.Size(220, 592);
+            this.dGV2.Size = new System.Drawing.Size(220, 554);
             this.dGV2.TabIndex = 5;
             // 
             // button2
@@ -113,24 +116,57 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             // dGV1
             // 
             this.dGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV1.Location = new System.Drawing.Point(12, 12);
+            this.dGV1.Location = new System.Drawing.Point(12, 50);
             this.dGV1.Name = "dGV1";
-            this.dGV1.Size = new System.Drawing.Size(849, 592);
+            this.dGV1.Size = new System.Drawing.Size(849, 554);
             this.dGV1.TabIndex = 9;
             // 
             // dGV3
             // 
             this.dGV3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV3.Location = new System.Drawing.Point(1093, 12);
+            this.dGV3.Location = new System.Drawing.Point(1093, 50);
             this.dGV3.Name = "dGV3";
-            this.dGV3.Size = new System.Drawing.Size(220, 592);
+            this.dGV3.Size = new System.Drawing.Size(220, 554);
             this.dGV3.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 25);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Macierz A";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(867, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 25);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Ciąg x ukrytych";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(1090, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(164, 25);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Wektor wynikowy";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1423, 616);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dGV3);
             this.Controls.Add(this.dGV1);
             this.Controls.Add(this.button4);
@@ -146,6 +182,7 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             ((System.ComponentModel.ISupportInitialize)(this.dGV1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -159,6 +196,9 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dGV1;
         private System.Windows.Forms.DataGridView dGV3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

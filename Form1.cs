@@ -148,8 +148,6 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             }
             AxB(Vandermonde);
         }
-
-
     }
 }
 
