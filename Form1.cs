@@ -89,6 +89,7 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
                 }
             }
             AxB(Gauss);
+            label1.Text = "Macierz Gaussa";
         }
 
         //Macierz Hilberta
@@ -103,6 +104,7 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
                 }
             }
             AxB(Hilbert);
+            label1.Text = "Macierz Hilberta";
         }
 
         // Macierz cykliczna
@@ -132,6 +134,7 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
                 }
             }
             AxB(cykliczna);
+            label1.Text = "Macierz cykliczna";
         }
 
         //Macierz Vandermonda
@@ -147,6 +150,7 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
                 }
             }
             AxB(Vandermonde);
+            label1.Text = "Macierz Vandermonda";
         }
     }
 }
