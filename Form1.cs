@@ -26,10 +26,10 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             dGV1.RowHeadersWidth = 80;
             for (int k = 0; k < size; k++)
             {
-                dGV1.Columns[k].HeaderCell.Value = " k = " + k.ToString();
+                dGV1.Columns[k].HeaderCell.Value = " k" + k.ToString();
                 for (int w = 0; w < size; w++)
                 {
-                    dGV1.Rows[w].HeaderCell.Value = " w = " + w.ToString();
+                    dGV1.Rows[w].HeaderCell.Value = " w" + w.ToString();
                     dGV1.Rows[w].Cells[k].Value = A[w, k].ToString();
                 }
             }
@@ -40,7 +40,7 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             dGV2.RowHeadersWidth = 80;
             for (int k = 0; k < size; k++)
             {
-                dGV2.Rows[k].HeaderCell.Value = " x = " + (k + 1).ToString();
+                dGV2.Rows[k].HeaderCell.Value = " x" + (k + 1).ToString();
                 dGV2.Rows[k].Cells[0].Value = (k + 1).ToString();
             }
 
@@ -50,7 +50,7 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             dGV3.RowHeadersWidth = 80;
             for (int k = 0; k < size; k++)
             {
-                //dGV3.Rows[k].HeaderCell.Value = " x = " + (k + 1).ToString();
+                dGV3.Rows[k].HeaderCell.Value = " b" + (k + 1).ToString();
                 dGV3.Rows[k].Cells[0].Value = B[k].ToString();
             }
         }
@@ -154,5 +154,3 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
         }
     }
 }
-
-//komentarze, wygląd
