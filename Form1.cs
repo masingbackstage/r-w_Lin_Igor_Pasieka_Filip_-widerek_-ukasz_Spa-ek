@@ -42,25 +42,23 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             }
 
             //dGV2 wyswietlenie wektora ukrytych 
-            dGV2.RowCount = 1;
-            dGV2.ColumnCount = size;
+            dGV2.RowCount = size;
+            dGV2.ColumnCount = 1;
             dGV2.RowHeadersWidth = 80;
             for (int k = 0; k < size; k++)
             {
-                dGV2.Rows[0].HeaderCell.Value = " w = 0";
-                dGV2.Columns[k].HeaderCell.Value = " x = " + (k + 1).ToString();
-                dGV2.Rows[0].Cells[k].Value = (k + 1).ToString();
+                dGV2.Rows[k].HeaderCell.Value = " x = " + (k + 1).ToString();
+                dGV2.Rows[k].Cells[0].Value = (k + 1).ToString();
             }
 
             //dGV3 wyswietlenie wektora b
-            dGV3.RowCount = 1;
-            dGV3.ColumnCount = size;
+            dGV3.RowCount = size;
+            dGV3.ColumnCount = 1;
             dGV3.RowHeadersWidth = 80;
             for (int k = 0; k < size; k++)
             {
-                dGV3.Rows[0].HeaderCell.Value = " w = 0";
-                dGV3.Columns[k].HeaderCell.Value = " x = " + (k + 1).ToString();
-                dGV3.Rows[0].Cells[k].Value = B[k].ToString();
+                dGV3.Rows[k].HeaderCell.Value = " x = " + (k + 1).ToString();
+                dGV3.Rows[k].Cells[0].Value = B[k].ToString();
             }
         }
 
@@ -162,4 +160,4 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
     }
 }
 
-//komentarze, macierze i wektory obrócone o 90 stopni, wygląd
+//komentarze, wygląd
