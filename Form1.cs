@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Numerics;
 
@@ -57,7 +50,7 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             dGV3.RowHeadersWidth = 80;
             for (int k = 0; k < size; k++)
             {
-                dGV3.Rows[k].HeaderCell.Value = " x = " + (k + 1).ToString();
+                //dGV3.Rows[k].HeaderCell.Value = " x = " + (k + 1).ToString();
                 dGV3.Rows[k].Cells[0].Value = B[k].ToString();
             }
         }
