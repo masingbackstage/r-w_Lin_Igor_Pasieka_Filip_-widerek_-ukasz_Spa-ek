@@ -20,10 +20,13 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
         //Wyświetlenie macierzy w tabeli
         void Print_dGV(Complex[,] A, Complex[] B)
         {
-            //dGV1 wyswietlenie macierzy
+            //dGV1 odpowiada za wyswietlenie wybranej przez uzytkownika macierzy A
+            //Okreslenie ilosci komorek w kolumnie i wierszu oraz rozmiaru komorek w macierzy A
             dGV1.RowCount = size;
             dGV1.ColumnCount = size;
             dGV1.RowHeadersWidth = 80;
+
+            //Wyswietlenie do utworzonej macierzy A wartosci oraz ponumerowanie naglowkow danej pozycji
             for (int k = 0; k < size; k++)
             {
                 dGV1.Columns[k].HeaderCell.Value = " k" + k.ToString();
@@ -34,20 +37,26 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
                 }
             }
 
-            //dGV2 wyswietlenie wektora ukrytych 
+            //dGV2 wyswietlenie wektora ukrytych x
+            //Okreslenie ilosci komorek w kolumnie i rozmiaru komorek w wektorze ukrytych x
             dGV2.RowCount = size;
             dGV2.ColumnCount = 1;
             dGV2.RowHeadersWidth = 80;
+
+            //Wyswietlenie utworzonego wektora ukrytych x ciagu arytmetycznego oraz ponumerowanie naglowkow danej pozycji
             for (int k = 0; k < size; k++)
             {
                 dGV2.Rows[k].HeaderCell.Value = " x" + (k + 1).ToString();
                 dGV2.Rows[k].Cells[0].Value = (k + 1).ToString();
             }
 
-            //dGV3 wyswietlenie wektora b
+            //dGV3 wyswietlenie dzialania A*x=B jako wektor wynikowy B
+            //Okreslenie ilosci komorek w kolumnie i rozmiaru komorek w wektorze wynikowym B
             dGV3.RowCount = size;
             dGV3.ColumnCount = 1;
             dGV3.RowHeadersWidth = 80;
+
+            //Wyswietlenie do utworzonego wektora wynikowego B wynikow oraz ponumerowanie naglowkow danej pozycji
             for (int k = 0; k < size; k++)
             {
                 dGV3.Rows[k].HeaderCell.Value = " b" + (k + 1).ToString();
@@ -58,7 +67,10 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
         //Mnożenie macierzy z wektorem
         void AxB(Complex[,] A)
         {
+            //Stworzenie wektora, do ktorego zapisywany jest wynik działania A*x=B
             Complex[] wynik = new Complex[size];
+
+            //Wpisanie do wektora wynikow dzialania A*x=B
             for (int k = 0; k < size; k++)
             {
                 x++;
@@ -68,19 +80,25 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
                 }
             }
             x = 0;
+
+            //Wywolanie funkcji odpowiadajace za wyswietlenie wynikow na ekranie
             Print_dGV(A, wynik);
         }
 
         //Zmiana rozmiaru macierzy
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
+            //Na bierzaco pobiera podana przez uzytkownika liczbe odpowiadajaca rozmiarom macierzy i wektorow
             size = (int)numericUpDown1.Value;
         }
         
         //Macierz Gaussa
         private void Gauss(object sender, EventArgs e)
         {
+            //Utworzenie macierzy Gaussa z wymiarami podanymi przez uzytkownika
             Complex[,] Gauss = new Complex[size, size];
+
+            //Wypelnienie macierzy wybranymi wartosciami
             for (int k = 0; k < size; k++)
             {
                 for (int w = 0; w < size; w++)
@@ -88,14 +106,21 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
                     Gauss[w, k] = new Complex(w + 1, k + 1);
                 }
             }
+
+            //Wywolanie funkcji odpowiadajacej za mnozenie A*x=B dla danej macierzy
             AxB(Gauss);
+
+            //Zmiana tekstu wypisanego nad podana macierza
             label1.Text = "Macierz Gaussa";
         }
 
         //Macierz Hilberta
         private void Hilbert(object sender, EventArgs e)
         {
+            //Utworzenie macierzy Hilberta z wymiarami podanymi przez uzytkownika
             Complex[,] Hilbert = new Complex[size, size];
+
+            //Wypelnienie macierzy wybranymi wartosciami zgodnie ze wzorem Hilberta
             for (int k = 0; k < size; k++)
             {
                 for (int w = 0; w < size; w++)
@@ -103,7 +128,11 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
                     Hilbert[k, w] = Math.Round((double)1 / (k + w + 1), 5);
                 }
             }
+
+            //Wywolanie funkcji odpowiadajacej za mnozenie A*x=B dla danej macierzy
             AxB(Hilbert);
+
+            //Zmiana tekstu wypisanego nad podana macierza
             label1.Text = "Macierz Hilberta";
         }
 
@@ -113,7 +142,10 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             //zmienna urojona do przesuwania liczb w macierzy
             Complex cykl;
 
+            //Utworzenie macierzy cyklicznej z wymiarami podanymi przez uzytkownika
             Complex[,] cykliczna = new Complex[size, size];
+
+            //Wypelnienie macierzy wybranymi wartosciami zgodnie z zasada dzialania macierzy cyklicznej
             for (int k = 0; k < size; k++)
             {
                 for (int w = 0; w < size; w++)
@@ -133,14 +165,20 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
                     }
                 }
             }
+            //Wywolanie funkcji odpowiadajacej za mnozenie A*x=B dla danej macierzy
             AxB(cykliczna);
+
+            //Zmiana tekstu wypisanego nad podana macierza
             label1.Text = "Macierz cykliczna";
         }
 
         //Macierz Vandermonda
         private void Vandermonde(object sender, EventArgs e)
         {
+            //Utworzenie macierzy Vandemondea z wymiarami podanymi przez uzytkownika
             Complex[,] Vandermonde = new Complex[size, size];
+
+            //Wypelnienie macierzy wybranymi wartosciami zgodnie ze wzorem Vandemondea
             for (int k = 0; k < size; k++)
             {
                 for (int w = 0; w < size; w++)
@@ -149,7 +187,11 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
                     Vandermonde[k, w] = Math.Pow((k + 1), w);
                 }
             }
+
+            //Wywolanie funkcji odpowiadajacej za mnozenie A*x=B dla danej macierzy
             AxB(Vandermonde);
+
+            //Zmiana tekstu wypisanego nad podana macierza
             label1.Text = "Macierz Vandermonda";
         }
     }
