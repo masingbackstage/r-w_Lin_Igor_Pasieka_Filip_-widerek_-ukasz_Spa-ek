@@ -75,9 +75,9 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             // dGV2
             // 
             this.dGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV2.Location = new System.Drawing.Point(12, 369);
+            this.dGV2.Location = new System.Drawing.Point(867, 12);
             this.dGV2.Name = "dGV2";
-            this.dGV2.Size = new System.Drawing.Size(1301, 95);
+            this.dGV2.Size = new System.Drawing.Size(220, 592);
             this.dGV2.TabIndex = 5;
             // 
             // button2
@@ -115,15 +115,15 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             this.dGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV1.Location = new System.Drawing.Point(12, 12);
             this.dGV1.Name = "dGV1";
-            this.dGV1.Size = new System.Drawing.Size(1301, 351);
+            this.dGV1.Size = new System.Drawing.Size(849, 592);
             this.dGV1.TabIndex = 9;
             // 
             // dGV3
             // 
             this.dGV3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV3.Location = new System.Drawing.Point(12, 470);
+            this.dGV3.Location = new System.Drawing.Point(1093, 12);
             this.dGV3.Name = "dGV3";
-            this.dGV3.Size = new System.Drawing.Size(1301, 134);
+            this.dGV3.Size = new System.Drawing.Size(220, 592);
             this.dGV3.TabIndex = 10;
             // 
             // Form1
