@@ -30,16 +30,16 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.dGV1 = new System.Windows.Forms.DataGridView();
-            this.dGV2 = new System.Windows.Forms.DataGridView();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.dGV3 = new System.Windows.Forms.DataGridView();
+            this.dGV2 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV2)).BeginInit();
+            this.dGV1 = new System.Windows.Forms.DataGridView();
+            this.dGV3 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,28 +53,6 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             this.button1.Text = "Gauss";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Gauss);
-            // 
-            // dGV1
-            // 
-            this.dGV1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV1.GridColor = System.Drawing.SystemColors.ControlText;
-            this.dGV1.Location = new System.Drawing.Point(12, 12);
-            this.dGV1.Name = "dGV1";
-            this.dGV1.RowHeadersWidth = 51;
-            this.dGV1.Size = new System.Drawing.Size(1301, 351);
-            this.dGV1.TabIndex = 1;
-            // 
-            // dGV2
-            // 
-            this.dGV2.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV2.GridColor = System.Drawing.Color.SlateGray;
-            this.dGV2.Location = new System.Drawing.Point(12, 470);
-            this.dGV2.Name = "dGV2";
-            this.dGV2.RowHeadersWidth = 51;
-            this.dGV2.Size = new System.Drawing.Size(1301, 95);
-            this.dGV2.TabIndex = 3;
             // 
             // numericUpDown1
             // 
@@ -94,13 +72,13 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // dGV3
+            // dGV2
             // 
-            this.dGV3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV3.Location = new System.Drawing.Point(12, 369);
-            this.dGV3.Name = "dGV3";
-            this.dGV3.Size = new System.Drawing.Size(1301, 95);
-            this.dGV3.TabIndex = 5;
+            this.dGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV2.Location = new System.Drawing.Point(12, 369);
+            this.dGV2.Name = "dGV2";
+            this.dGV2.Size = new System.Drawing.Size(1301, 95);
+            this.dGV2.TabIndex = 5;
             // 
             // button2
             // 
@@ -132,24 +110,40 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Vandermonde);
             // 
+            // dGV1
+            // 
+            this.dGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV1.Location = new System.Drawing.Point(12, 12);
+            this.dGV1.Name = "dGV1";
+            this.dGV1.Size = new System.Drawing.Size(1301, 351);
+            this.dGV1.TabIndex = 9;
+            // 
+            // dGV3
+            // 
+            this.dGV3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV3.Location = new System.Drawing.Point(12, 470);
+            this.dGV3.Name = "dGV3";
+            this.dGV3.Size = new System.Drawing.Size(1301, 134);
+            this.dGV3.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1423, 616);
+            this.Controls.Add(this.dGV3);
+            this.Controls.Add(this.dGV1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dGV2);
-            this.Controls.Add(this.dGV3);
-            this.Controls.Add(this.dGV1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dGV1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV3)).EndInit();
             this.ResumeLayout(false);
 
@@ -158,13 +152,13 @@ namespace rów_Lin_Igor_Pasieka_Filip_Świderek_Łukasz_Spałek
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dGV1;
-        private System.Windows.Forms.DataGridView dGV2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.DataGridView dGV3;
+        private System.Windows.Forms.DataGridView dGV2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dGV1;
+        private System.Windows.Forms.DataGridView dGV3;
     }
 }
 
